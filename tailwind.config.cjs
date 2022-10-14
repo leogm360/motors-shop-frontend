@@ -49,6 +49,12 @@ module.exports = {
         },
         whiteFixed: "#FFFFFF",
       },
+      padding: {
+        4.5: "1.1875rem" /* 19px */,
+      },
+      borderWidth: {
+        1.5: "1.5px",
+      },
     },
   },
   plugins: [],

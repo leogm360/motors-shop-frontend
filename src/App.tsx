@@ -1,10 +1,10 @@
-import { Title } from "./components";
+import { Button } from "./components";
 import "./styles/index.css";
 
 export const App = () => {
   return (
-    <Title level={5} size="5xl" weight="bold">
-      Olá mundo!
-    </Title>
+    <Button variant="brand" size="big" disabled>
+      Teste botão
+    </Button>
   );
 };
