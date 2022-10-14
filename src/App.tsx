@@ -1,6 +1,6 @@
-import { MileageBadge } from "./components";
+import { YearBadge } from "./components";
 import "./styles/index.css";
 
 export const App = () => {
-  return <MileageBadge mileage={75000} />;
+  return <YearBadge year={2019} />;
 };
