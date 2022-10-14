@@ -1,10 +1,10 @@
+import { Title } from "./components";
 import "./styles/index.css";
 
 export const App = () => {
   return (
-    <>
-      <h1>Saudação:</h1>
-      <p>Olá mundo!</p>
-    </>
+    <Title level={5} size="5xl" weight="bold">
+      Olá mundo!
+    </Title>
   );
 };
