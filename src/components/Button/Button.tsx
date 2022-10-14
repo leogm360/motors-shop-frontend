@@ -2,8 +2,8 @@ import { getButtonVariant, getButtonSize, getButtonDisabled } from "./utils";
 import { IButtonProps } from "./ButtonTypes";
 
 export const Button = ({
-  variant,
-  size,
+  variant = "default",
+  size = "big",
   children,
   ...buttonAttributes
 }: IButtonProps) => {

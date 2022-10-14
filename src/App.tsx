@@ -1,10 +1,6 @@
-import { Button } from "./components";
+import { MileageBadge } from "./components";
 import "./styles/index.css";
 
 export const App = () => {
-  return (
-    <Button variant="brand" size="big" disabled>
-      Teste botão
-    </Button>
-  );
+  return <MileageBadge mileage={75000} />;
 };

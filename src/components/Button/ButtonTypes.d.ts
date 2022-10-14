@@ -19,7 +19,7 @@ export type TSize = "big" | "medium";
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export interface IButtonProps {
-  variant: TVariant;
-  size: TSize;
+  variant?: TVariant;
+  size?: TSize;
   children: ReactNode;
 }
