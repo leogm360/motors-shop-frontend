@@ -1,10 +1,13 @@
+import { Screen, Comment } from "./components";
+import { useData } from "./contexts";
 import "./styles/index.css";
 
 export const App = () => {
+  const { comment } = useData();
+
   return (
-    <>
-      <h1>Saudação:</h1>
-      <p>Olá mundo!</p>
-    </>
+    <Screen>
+      <Comment comment={comment} />
+    </Screen>
   );
 };
