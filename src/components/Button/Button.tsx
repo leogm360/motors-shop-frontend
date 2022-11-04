@@ -5,20 +5,18 @@ export const Button = ({
   variant = "default",
   size = "big",
   children,
+  className,
   ...buttonAttributes
 }: IButtonProps) => {
   const buttonBase =
-    "font-semibold border-1.5 border-transparent rounded w-full transition duration-500";
+    "font-semibold border-2 border-transparent rounded w-full transition duration-500";
   const buttonVariant = getButtonVariant(variant);
   const buttonSize = getButtonSize(size);
   const buttonDisabled = getButtonDisabled(variant);
-  const customClasses = buttonAttributes.className
-    ? buttonAttributes.className
-    : "";
 
   return (
     <button
-      className={`${buttonBase} ${buttonVariant} ${buttonSize} ${buttonDisabled} ${customClasses}`}
+      className={`${buttonBase} ${buttonVariant} ${buttonSize} ${buttonDisabled} ${className}`}
       {...buttonAttributes}
     >
       {children}

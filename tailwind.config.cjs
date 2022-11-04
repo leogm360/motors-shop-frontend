@@ -1,8 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      flexGrow: {
+        2: "2",
+      },
+      maxWidth: {
+        "2xs": "19.5rem",
+        "2.5xl": "46.125rem",
+      },
+      fontFamily: {
+        Lexend: ["Lexend", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
+      },
+      fontSize: {
+        "2.5xl": "1.625rem" /* 26px */,
+      },
       colors: {
         brand: {
           1: "#4529E6",
@@ -52,13 +67,13 @@ module.exports = {
       padding: {
         4.5: "1.1875rem" /* 19px */,
       },
-      borderWidth: {
-        1.5: "1.5px",
-      },
-      fontSize: {
-        "2.5xl": "1.625rem" /* 26px */,
+      backgroundImage: {
+        "auction-gradient-light":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.29) 0%, #000000 100%)",
+        "auction-gradient-dark":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.71) 0%, #000000 100%)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

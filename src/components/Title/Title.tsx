@@ -5,6 +5,7 @@ export const Title = ({
   level = 1,
   size = "5xl",
   weight = "bold",
+  className,
   children,
   ...headingAttributes
 }: ITitleProps) => {
@@ -14,7 +15,10 @@ export const Title = ({
   const titleWeight = getTitleWeight(weight);
 
   return (
-    <HLevel className={`${titleSize} ${titleWeight}`} {...headingAttributes}>
+    <HLevel
+      className={`${titleSize} ${titleWeight} ${className}`}
+      {...headingAttributes}
+    >
       {children}
     </HLevel>
   );

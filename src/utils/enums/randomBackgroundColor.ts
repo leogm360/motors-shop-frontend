@@ -1,4 +1,4 @@
-export const enum ERandomBackgroundColor {
+export enum ERandomBackgroundColor {
   colorRandom1 = "bg-random-1",
   colorRandom2 = "bg-random-2",
   colorRandom3 = "bg-random-3",

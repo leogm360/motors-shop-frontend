@@ -2,6 +2,7 @@ import { TSize, TWeight } from "./TitleTypes";
 
 export const getTitleSize = (size: TSize) =>
   ({
+    sm: "text-sm",
     base: "text-base",
     lg: "text-lg",
     xl: "text-xl",
@@ -18,6 +19,7 @@ export const getTitleWeight = (weight: TWeight) =>
     light: "font-light",
     normal: "font-normal",
     medium: "font-medium",
+    semibold: "font-semibold",
     bold: "font-bold",
     extrabold: "font-extrabold",
     black: "font-black",

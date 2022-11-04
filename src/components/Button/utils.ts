@@ -13,7 +13,7 @@ export const getButtonVariant = (variant: TVariant) =>
     "outline-brand":
       "text-brand-1 bg-transparent border-brand-1 hover:bg-brand-4",
     "outline-light":
-      "text-grey-10 bg-grey-10 hover:text-grey-1 hover:bg-grey-10",
+      "text-grey-10 bg-transparent border-grey-10 hover:text-grey-1 hover:bg-grey-10",
     "outline-medium":
       "text-grey-0 bg-transparent border-grey-4 hover:text-whiteFixed hover:bg-grey-1",
     "outline-heavy":
@@ -22,8 +22,8 @@ export const getButtonVariant = (variant: TVariant) =>
 
 export const getButtonSize = (size: TSize) =>
   ({
-    big: "text-base px-7 py-6",
-    medium: "text-sm px-5 py-4.5",
+    big: "text-base px-8 py-4",
+    medium: "text-sm px-6 py-3",
   }[size]);
 
 export const getButtonDisabled = (variant: TVariant) =>

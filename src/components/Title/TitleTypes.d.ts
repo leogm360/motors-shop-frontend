@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode } from "react";
 
 export type TLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type TSize = "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
+export type TSize = "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 
 export type TWeight =
   | "thin"
@@ -10,6 +10,7 @@ export type TWeight =
   | "light"
   | "normal"
   | "medium"
+  | "semibold"
   | "bold"
   | "extrabold"
   | "black";
