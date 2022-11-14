@@ -13,3 +13,4 @@ export * from "./Footer";
 export * from "./Header";
 export * from "./VehiclesList";
 export * from "./Comment";
+export * from "./LoginForm";

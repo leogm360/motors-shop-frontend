@@ -42,6 +42,14 @@
     @apply cursor-not-allowed;
   }
 
+  a {
+    @apply cursor-pointer;
+  }
+
+  a[aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+
   ul,
   ol,
   li {

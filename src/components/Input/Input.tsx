@@ -5,7 +5,14 @@ import { IInputProps } from "./InputTypes";
 
 export const Input = forwardRef<HTMLInputElement, IInputProps>(
   (
-    { label = "", error = "", mask, isMasked = false, ...inputAttributes },
+    {
+      label = "",
+      error = "",
+      className = "",
+      mask,
+      isMasked = false,
+      ...inputAttributes
+    },
     ref
   ) => {
     if (mask && !isMasked) {
@@ -19,7 +26,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
     }
 
     return (
-      <div className="flex flex-col w-full gap-2">
+      <div className={`flex flex-col w-full gap-2 ${className}`}>
         {label && (
           <label
             className={`text-sm font-medium${

@@ -10,7 +10,7 @@ export const Screen = ({
   return (
     <>
       <Header />
-      <main className={`h-full ${className}`} {...mainAttributes}>
+      <main className={`h-full bg-grey-8 ${className}`} {...mainAttributes}>
         {children}
       </main>
       <Footer />

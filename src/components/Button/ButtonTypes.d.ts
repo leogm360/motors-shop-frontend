@@ -21,5 +21,6 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 export interface IButtonProps {
   variant?: TVariant;
   size?: TSize;
+  isLoading?: boolean;
   children: ReactNode;
 }

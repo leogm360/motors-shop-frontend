@@ -1,11 +1,13 @@
 import { getButtonVariant, getButtonSize, getButtonDisabled } from "./utils";
+import { Loader } from "../Loader";
 import { IButtonProps } from "./ButtonTypes";
 
 export const Button = ({
   variant = "default",
   size = "big",
+  className = "",
+  isLoading = false,
   children,
-  className,
   ...buttonAttributes
 }: IButtonProps) => {
   const buttonBase =
@@ -19,7 +21,7 @@ export const Button = ({
       className={`${buttonBase} ${buttonVariant} ${buttonSize} ${buttonDisabled} ${className}`}
       {...buttonAttributes}
     >
-      {children}
+      {isLoading ? <Loader /> : children}
     </button>
   );
 };
