@@ -41,19 +41,21 @@ export const MenuMobile = () => {
                 Leilão
               </a>
             </div>
-            <div className="flex flex-col px-3 py-8 gap-11">
+            <div className="relative flex flex-col px-3 py-8 gap-11">
               {user !== null ? (
-                <button
-                  className="relative flex items-center gap-2"
-                  onClick={() => setIsDialogOpen(!isDialogOpen)}
-                >
-                  <UserIcon user={user} size="small" />
-                  <span className="text-grey-2">{user.name}</span>
+                <>
+                  <button
+                    className="flex items-center gap-2"
+                    onClick={() => setIsDialogOpen(!isDialogOpen)}
+                  >
+                    <UserIcon user={user} size="small" />
+                    <span className="text-grey-2">{user.name}</span>
+                  </button>
                   <UserDialog
-                    className="top-12 left-0"
+                    className="top-20 left-5"
                     isDialogOpen={isDialogOpen}
                   />
-                </button>
+                </>
               ) : (
                 <>
                   <a className="font-semibold text-grey-2" href="#auctions">

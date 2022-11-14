@@ -14,18 +14,14 @@ export const TimerBadge = ({ expiration }: ITimerBadgeProps) => {
   const [seconds, setSeconds] = useState<number>(differenceOfSeconds);
 
   useEffect(() => {
-    if (seconds === 0) return;
+    if (seconds <= 0) return;
 
-    let interval: number | null = null;
-
-    interval = setInterval(
+    let interval = setInterval(
       () => setSeconds(seconds - 1),
       ONE_SECOND_IN_MILLISECONDS
     );
 
     return () => {
-      if (interval === null) return;
-
       clearInterval(interval);
     };
   }, [seconds]);
@@ -34,7 +30,7 @@ export const TimerBadge = ({ expiration }: ITimerBadgeProps) => {
     <div className="flex items-center text-whiteFixed bg-whiteFixed rounded-full w-fit py-2 pl-2 pr-4 gap-2">
       <Icon name="clock" />
       <span className="font-Lexend font-semibold text-grey-1">
-        {formatSecondsToTimer(seconds)}
+        {seconds <= 0 ? "00:00:00" : formatSecondsToTimer(seconds)}
       </span>
     </div>
   );

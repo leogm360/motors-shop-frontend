@@ -3,7 +3,7 @@ import { IUserConfigProps } from "./UserDialogTypes";
 export const UserDialog = ({ isDialogOpen, className }: IUserConfigProps) => {
   return isDialogOpen ? (
     <div
-      className={`absolute flex flex-col bg-grey-9 rounded px-5 py-4 gap-4 shadow-md ${className}`}
+      className={`absolute flex flex-col bg-grey-9 rounded px-5 py-4 gap-4 shadow-menu ${className}`}
     >
       <button className="text-left text-grey-2">Editar Perfil</button>
       <button className="text-left text-grey-2">Editar Endereço</button>

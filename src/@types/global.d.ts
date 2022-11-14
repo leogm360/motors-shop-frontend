@@ -1,4 +1,6 @@
-import { ERandomBackgroundColor } from "../utils";
+import { ReactNode } from "react";
+import { IndexRouteObject } from "react-router-dom";
+import { ERandomBackgroundColor, EUserRoles } from "../utils";
 
 export declare global {
   interface IUser {
@@ -23,5 +25,13 @@ export declare global {
   interface IComment {
     issuedAt: string;
     text: string;
+  }
+
+  interface IRoute {
+    path: string;
+    key: string;
+    element: ReactNode;
+    allowedRoles: EUserRoles[];
+    autheticated: boolean;
   }
 }

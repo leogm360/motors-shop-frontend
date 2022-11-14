@@ -23,13 +23,13 @@ export const DataProvider = ({ children }: IDataProviderProps) => {
     mileage: 75000,
     year: 2010,
     price: 25378.75,
-    expiresIn: "2022-11-05T15:33:59.999Z",
+    expiresIn: "2022-11-08T15:33:59.999Z",
     isAuction: true,
     isActive: true,
   };
 
   const comment: IComment = {
-    issuedAt: "2022-11-04T14:00:59.999Z",
+    issuedAt: "2022-11-08T14:00:59.999Z",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit nobis tempora esse eos sit necessitatibus quaerat perferendis, ad in nulla facere maxime sint soluta quas veritatis repudiandae? A, labore.",
   };
 

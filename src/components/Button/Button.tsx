@@ -9,7 +9,7 @@ export const Button = ({
   ...buttonAttributes
 }: IButtonProps) => {
   const buttonBase =
-    "font-semibold border-2 border-transparent rounded w-full transition duration-500";
+    "font-semibold text-center border-2 border-transparent rounded w-full transition duration-500";
   const buttonVariant = getButtonVariant(variant);
   const buttonSize = getButtonSize(size);
   const buttonDisabled = getButtonDisabled(variant);
