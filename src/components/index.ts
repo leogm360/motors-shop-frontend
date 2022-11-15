@@ -14,3 +14,4 @@ export * from "./Header";
 export * from "./VehiclesList";
 export * from "./Comment";
 export * from "./LoginForm";
+export * from "./RegisterForm";

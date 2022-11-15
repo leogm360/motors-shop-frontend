@@ -1,4 +1,4 @@
 export enum EUserRoles {
-  buyer = "buyer",
-  advertiser = "advertiser",
+  buyer = "BUYER",
+  advertiser = "ADVERTISER",
 }

@@ -31,18 +31,15 @@ export const MenuDesktop = () => {
       </div>
       <div className="border-l-2 border-grey-6 pl-11">
         {!isObjectEmpty(user) ? (
-          <div className="flex items-center h-full">
+          <div className="relative flex items-center h-full">
             <button
-              className="relative flex items-center gap-2"
+              className="flex items-center gap-2"
               onClick={() => setIsDialogOpen(!isDialogOpen)}
             >
               <UserIcon user={user} size="small" />
               <span className="text-grey-2">{user.name}</span>
-              <UserDialog
-                className="top-12 left-0"
-                isDialogOpen={isDialogOpen}
-              />
             </button>
+            <UserDialog className="top-16 left-0" isDialogOpen={isDialogOpen} />
           </div>
         ) : (
           <div className="flex items-center h-full gap-11">
