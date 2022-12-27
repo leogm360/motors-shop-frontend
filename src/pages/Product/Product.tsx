@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useData } from "@hooks";
@@ -8,7 +9,7 @@ import {
   isObjectEmpty,
 } from "@utils";
 import { Button, Title, UserIcon, Comment, TextArea, Badge } from "@components";
-import { GalleryPhoto } from "./partials";
+import { GalleryPhoto, Binds } from "./partials";
 import { useState } from "react";
 
 const commentBadges = [
@@ -18,15 +19,17 @@ const commentBadges = [
 ];
 
 export const Product = () => {
-  const { user, product, comment } = useData();
-
-  const navigate = useNavigate();
-
-  const [userComment, setUserComment] = useState<string>("");
+  const { user, product, comment, bind } = useData();
 
   const comments = [comment, comment, comment, comment, comment];
 
-  const handleUserComment = (value: string) => setUserComment(value);
+  const binds = [bind, bind, bind, bind, bind];
+
+  const navigate = useNavigate();
+
+  const [isBindShown, setIsBindShown] = useState<boolean>(false);
+
+  const [userComment, setUserComment] = useState<string>("");
 
   const handleSubmitComment = () => console.log(userComment);
 
@@ -64,11 +67,25 @@ export const Product = () => {
             <Button
               type="button"
               className="w-fit mt-6"
-              variant="brand"
+              variant={isBindShown ? "negative" : "brand"}
               size="medium"
+              onClick={() => setIsBindShown(!isBindShown)}
             >
-              Comprar
+              {isBindShown ? "Cancelar" : "Comprar"}
             </Button>
+            <AnimatePresence>
+              {isBindShown && (
+                <motion.div
+                  className="mt-6"
+                  initial={{ height: 0, overflow: "hidden" }}
+                  animate={{ height: "auto", overflow: "hidden" }}
+                  exit={{ height: 0, overflow: "hidden" }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <Binds binds={binds} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           <div className="bg-grey-10 rounded mt-5 p-7">
             <Title
@@ -156,7 +173,7 @@ export const Product = () => {
               className="h-32 mt-6"
               value={userComment}
               placeholder="Carro muito confortável, foi uma ótima experiência de compra..."
-              onChange={(e) => handleUserComment(e.target.value)}
+              onChange={(e) => setUserComment(e.currentTarget.value)}
             />
             <Button
               className="lg:absolute right-3 bottom-3 w-fit mt-6 lg:mt-0"
@@ -184,7 +201,7 @@ export const Product = () => {
                   as="button"
                   variant="comment"
                   value={text}
-                  onClick={(e) => handleUserComment(e.currentTarget.value)}
+                  onClick={(e) => setUserComment(e.currentTarget.value)}
                 >
                   {text}
                 </Badge>

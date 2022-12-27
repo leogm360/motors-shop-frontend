@@ -28,6 +28,11 @@ export declare global {
     isActive: boolean;
   }
 
+  interface IBind {
+    issuedBy: IUser;
+    issuedAt: string;
+    value: bind;
+  }
   interface IComment {
     issuedBy: IUser;
     issuedAt: string;

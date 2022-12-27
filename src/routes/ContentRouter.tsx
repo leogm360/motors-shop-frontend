@@ -1,32 +1,31 @@
-import { useCallback } from "react";
+import { useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Screen } from "@components";
 import { PrivateRoute } from "./partials";
 import { IContentRouterProp } from "./ContentRouterTypes";
 
 export const ContentRouter = ({ routes }: IContentRouterProp) => {
-  const handleRoutes = useCallback(
-    (routes: IRoute[]) =>
-      routes.map(({ path, key, element, authenticated, allowedRoles }) => {
-        // if (authenticated) {
-        //   return (
-        //     <PrivateRoute
-        //       key={key}
-        //       path={path}
-        //       element={element}
-        //       roles={allowedRoles}
-        //     />
-        //   );
-        // }
+  const handleMapRoutes = (routes: IRoute[]) =>
+    routes.map(({ path, key, element, authenticated, allowedRoles }) => {
+      // if (authenticated) {
+      //   return (
+      //     <PrivateRoute
+      //       key={key}
+      //       path={path}
+      //       element={element}
+      //       roles={allowedRoles}
+      //     />
+      //   );
+      // }
 
-        return <Route key={key} path={path} element={element} />;
-      }),
-    []
-  );
+      return <Route key={key} path={path} element={element} />;
+    });
+
+  const memoizedRoutes = useMemo(() => handleMapRoutes(routes), [routes]);
 
   return (
     <Screen>
-      <Routes>{handleRoutes(routes)}</Routes>
+      <Routes>{memoizedRoutes}</Routes>
     </Screen>
   );
 };

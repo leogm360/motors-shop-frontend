@@ -66,4 +66,21 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* For Webkit-based browsers (Chrome, Safari, Edge and Opera) */
+  .smooth-scrollbar::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  .smooth-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .smooth-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-grey-4;
+  }
+
+  .smooth-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-grey-3 cursor-pointer;
+  }
 }

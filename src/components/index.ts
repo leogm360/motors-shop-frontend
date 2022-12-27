@@ -15,3 +15,4 @@ export * from "./Modal";
 export * from "./TimerBadge";
 export * from "./Loader";
 export * from "./Badge";
+export * from "./Bind";

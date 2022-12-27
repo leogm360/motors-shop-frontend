@@ -8,7 +8,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>(
       <div className="flex flex-col w-full gap-2">
         {label && (
           <label
-            className={`text-sm font-medium${
+            className={`text-sm font-semibold${
               error ? " text-alert-1" : " text-grey-0"
             }`}
             id={inputAttributes.id}

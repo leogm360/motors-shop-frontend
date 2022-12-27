@@ -44,8 +44,14 @@ export const DataProvider = ({ children }: IDataProviderProps) => {
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit nobis tempora esse eos sit necessitatibus quaerat perferendis, ad in nulla facere maxime sint soluta quas veritatis repudiandae? A, labore.",
   };
 
+  const bind: IBind = {
+    issuedBy: user,
+    issuedAt: "2022-11-08T14:00:59.999Z",
+    value: 580000,
+  };
+
   return (
-    <DataContext.Provider value={{ user, product, comment }}>
+    <DataContext.Provider value={{ user, product, comment, bind }}>
       {children}
     </DataContext.Provider>
   );

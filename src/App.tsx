@@ -1,7 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
-import { GlobalProvider, DataProvider } from "@providers";
 import { ContentRouter } from "@routes";
+import { GlobalProvider, DataProvider } from "@providers";
 import {
   homeRoute,
   loginRoute,

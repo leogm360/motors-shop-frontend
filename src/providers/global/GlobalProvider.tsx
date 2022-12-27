@@ -5,7 +5,7 @@ export const GlobalProvider = ({
   providers,
   children,
 }: IGlobalProviderProps) => {
-  const providersReducer = (providers: TProvider[]) =>
+  const handleReduceProviders = (providers: TProvider[]) =>
     providers.reduce(
       (children, CurrentProvider) => (
         <CurrentProvider>{children}</CurrentProvider>
@@ -14,7 +14,7 @@ export const GlobalProvider = ({
     );
 
   const memoizedProviders = useMemo(
-    () => providersReducer(providers),
+    () => handleReduceProviders(providers),
     [providers]
   );
 
