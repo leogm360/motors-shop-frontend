@@ -5,7 +5,14 @@ import { IInputProps } from "./InputTypes";
 
 export const Input = forwardRef<HTMLInputElement, IInputProps>(
   (
-    { label = "", error = "", mask, isMasked = false, ...inputAttributes },
+    {
+      label = "",
+      error = "",
+      className = "",
+      mask,
+      isMasked = false,
+      ...inputAttributes
+    },
     ref
   ) => {
     if (mask && !isMasked) {
@@ -18,14 +25,31 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
       );
     }
 
+    const maskedInputAttributes = {
+      ...inputAttributes,
+      type: inputAttributes.type as InputTypes,
+      value: inputAttributes.value as
+        | string
+        | (readonly string[] & string)
+        | undefined,
+      autoCapitalize: inputAttributes.autoCapitalize as
+        | "none"
+        | "on"
+        | "off"
+        | "sentences"
+        | "words"
+        | "characters"
+        | undefined,
+    };
+
     return (
-      <div className="flex flex-col w-full gap-2">
+      <div className={`flex flex-col w-full gap-2 ${className}`}>
         {label && (
           <label
             className={`text-sm font-medium${
               error ? " text-alert-1" : " text-grey-0"
             }`}
-            id={inputAttributes.id}
+            htmlFor={inputAttributes.id}
           >
             {label}
           </label>
@@ -33,11 +57,9 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
         {isMasked ? (
           <TheMaskInput
             className={getInputStateClasses(!!error)}
-            id={inputAttributes.id}
-            type={inputAttributes.type as InputTypes}
             placeholder={inputAttributes.placeholder}
             mask={mask}
-            ref={ref}
+            {...maskedInputAttributes}
           />
         ) : (
           <input

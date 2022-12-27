@@ -1,15 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       flexGrow: {
         2: "2",
-      },
-      maxWidth: {
-        "2xs": "19.5rem",
-        "2.5xl": "46.125rem",
       },
       fontFamily: {
         Lexend: ["Lexend", "sans-serif"],
@@ -17,6 +12,12 @@ module.exports = {
       },
       fontSize: {
         "2.5xl": "1.625rem" /* 26px */,
+      },
+      backgroundImage: {
+        "auction-gradient-light":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.29) 0%, #000000 100%)",
+        "auction-gradient-dark":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.71) 0%, #000000 100%)",
       },
       colors: {
         brand: {
@@ -64,14 +65,18 @@ module.exports = {
         },
         whiteFixed: "#FFFFFF",
       },
+      maxWidth: {
+        "2xs": "19.5rem",
+        "2.5xl": "46.125rem",
+      },
+      height: {
+        129: "32.25rem",
+      },
       padding: {
         4.5: "1.1875rem" /* 19px */,
       },
-      backgroundImage: {
-        "auction-gradient-light":
-          "linear-gradient(180deg, rgba(0, 0, 0, 0.29) 0%, #000000 100%)",
-        "auction-gradient-dark":
-          "linear-gradient(180deg, rgba(0, 0, 0, 0.71) 0%, #000000 100%)",
+      boxShadow: {
+        menu: "0px 4px 40px -10px rgba(0, 0, 0, 0.25)",
       },
     },
   },

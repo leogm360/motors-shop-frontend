@@ -5,7 +5,7 @@ export const Title = ({
   level = 1,
   size = "5xl",
   weight = "bold",
-  className,
+  className = "",
   children,
   ...headingAttributes
 }: ITitleProps) => {

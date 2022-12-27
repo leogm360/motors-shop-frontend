@@ -14,11 +14,15 @@
   }
 
   * {
-    @apply box-border;
+    @apply box-border font-Inter text-base font-normal;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   body {
-    @apply font-Inter text-base font-normal min-h-screen;
+    @apply min-h-screen;
   }
 
   h1,
@@ -38,9 +42,28 @@
     @apply cursor-not-allowed;
   }
 
+  a {
+    @apply cursor-pointer;
+  }
+
+  a[aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+
   ul,
   ol,
   li {
-    list-style: none;
+    @apply list-none;
+  }
+
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .scrollbar-hide::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

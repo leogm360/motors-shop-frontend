@@ -3,7 +3,7 @@ import { getTextareaStateClasses } from "./utils";
 import { ITextAreaProps } from "./TextAreaTypes";
 
 export const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>(
-  ({ label = "", error = "", ...inputAttributes }, ref) => {
+  ({ label = "", error = "", className = "", ...inputAttributes }, ref) => {
     return (
       <div className="flex flex-col w-full gap-2">
         {label && (
@@ -17,7 +17,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>(
           </label>
         )}
         <textarea
-          className={getTextareaStateClasses(!!error)}
+          className={`${getTextareaStateClasses(!!error)} ${className}`}
           ref={ref}
           {...inputAttributes}
         />
