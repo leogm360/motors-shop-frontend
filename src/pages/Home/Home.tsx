@@ -1,7 +1,6 @@
 import { HashLink } from "react-router-hash-link";
-import { Title, VehiclesList } from "../../components";
-import { Button } from "../../components";
-import { useData } from "../../contexts";
+import { useData } from "@hooks";
+import { Title, VehiclesList, Button } from "@components";
 
 export const Home = () => {
   const { product } = useData();

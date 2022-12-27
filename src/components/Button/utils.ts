@@ -29,5 +29,5 @@ export const getButtonSize = (size: TSize) =>
 
 export const getButtonDisabled = (variant: TVariant) =>
   variant === "brand"
-    ? "disabled:text-brand-4 disabled:bg-brand-3"
-    : "disabled:text-whiteFixed disabled:bg-grey-5";
+    ? "disabled:text-brand-4 disabled:bg-brand-3 disabled:border-brand-3"
+    : "disabled:text-whiteFixed disabled:bg-grey-5 disabled:border-grey-5";

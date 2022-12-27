@@ -1,4 +1,4 @@
 export * from "./enums";
-export * from "./formaters";
+export * from "./formatters";
 export * from "./constants";
 export * from "./helpers";

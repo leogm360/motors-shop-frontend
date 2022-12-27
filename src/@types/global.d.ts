@@ -1,10 +1,16 @@
 import { ReactNode } from "react";
-import { IndexRouteObject } from "react-router-dom";
-import { ERandomBackgroundColor, EUserRoles } from "../utils";
+import { ERandomBackgroundColor, EUserRoles } from "@utils";
 
 export declare global {
+  interface IModalGenericProps {
+    isOpen: boolean;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+  }
+
   interface IUser {
     name: string;
+    description: string;
+    type: EUserRoles;
     image: string | null;
     backgroundColor: ERandomBackgroundColor;
   }
@@ -23,6 +29,7 @@ export declare global {
   }
 
   interface IComment {
+    issuedBy: IUser;
     issuedAt: string;
     text: string;
   }
@@ -32,6 +39,6 @@ export declare global {
     key: string;
     element: ReactNode;
     allowedRoles: EUserRoles[];
-    autheticated: boolean;
+    authenticated: boolean;
   }
 }

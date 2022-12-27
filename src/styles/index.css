@@ -14,7 +14,7 @@
   }
 
   * {
-    @apply box-border;
+    @apply box-border font-Inter text-base font-normal;
   }
 
   html {
@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply font-Inter text-base font-normal min-h-screen;
+    @apply min-h-screen;
   }
 
   h1,

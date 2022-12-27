@@ -1,8 +1,6 @@
 import { SVGProps } from "react";
-import * as svg from "./Icons";
-
-export type TName = "arrowright" | "clock" | "chevronup" | "bars" | "xmark";
+import { icons } from "./icons";
 
 export interface IIconProps extends SVGProps<SVGSVGElement> {
-  name: TName;
+  name: keyof ReturnType<typeof icons>;
 }

@@ -1,5 +1,5 @@
-import { RegisterForm } from "../../components";
-import { Title } from "../../components";
+import { Title } from "@components";
+import { RegisterForm } from "./partials";
 
 export const Register = () => {
   return (

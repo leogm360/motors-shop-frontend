@@ -1,7 +1,34 @@
-import { ContentRouter } from "./routes";
-import { homeRoute, loginRoute, registerRoute } from "./pages";
-import "./styles/index.css";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter } from "react-router-dom";
+import { GlobalProvider, DataProvider } from "@providers";
+import { ContentRouter } from "@routes";
+import {
+  homeRoute,
+  loginRoute,
+  registerRoute,
+  productRoute,
+  dashboardRoute,
+  profileRoute,
+} from "@pages";
+import "react-toastify/dist/ReactToastify.min.css";
+import "@styles/index.css";
 
-const routes = [homeRoute, loginRoute, registerRoute];
+const providers = [BrowserRouter, DataProvider];
 
-export const App = () => <ContentRouter routes={routes} />;
+const routes = [
+  homeRoute,
+  loginRoute,
+  registerRoute,
+  productRoute,
+  dashboardRoute,
+  profileRoute,
+];
+
+export const App = () => (
+  <>
+    <ToastContainer style={{ padding: "1rem" }} />
+    <GlobalProvider providers={providers}>
+      <ContentRouter routes={routes} />
+    </GlobalProvider>
+  </>
+);

@@ -1,5 +1,5 @@
 import { getButtonVariant, getButtonSize, getButtonDisabled } from "./utils";
-import { Loader } from "../Loader";
+import { Loader } from "@components";
 import { IButtonProps } from "./ButtonTypes";
 
 export const Button = ({
@@ -11,7 +11,7 @@ export const Button = ({
   ...buttonAttributes
 }: IButtonProps) => {
   const buttonBase =
-    "font-semibold text-center border-2 border-transparent rounded w-full transition duration-500";
+    "font-semibold text-center border-2 border-transparent rounded w-full px-2 transition duration-500";
   const buttonVariant = getButtonVariant(variant);
   const buttonSize = getButtonSize(size);
   const buttonDisabled = getButtonDisabled(variant);
@@ -19,6 +19,7 @@ export const Button = ({
   return (
     <button
       className={`${buttonBase} ${buttonVariant} ${buttonSize} ${buttonDisabled} ${className}`}
+      disabled={isLoading || buttonAttributes.disabled ? true : false}
       {...buttonAttributes}
     >
       {isLoading ? <Loader /> : children}

@@ -1,15 +1,22 @@
 import { useCallback } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { Screen } from "@components";
 import { PrivateRoute } from "./partials";
-import { Screen } from "../components";
 import { IContentRouterProp } from "./ContentRouterTypes";
 
 export const ContentRouter = ({ routes }: IContentRouterProp) => {
   const handleRoutes = useCallback(
     (routes: IRoute[]) =>
-      routes.map(({ path, key, element, autheticated, allowedRoles }) => {
-        // if (autheticated) {
-        //   return <PrivateRoute key={key} />;
+      routes.map(({ path, key, element, authenticated, allowedRoles }) => {
+        // if (authenticated) {
+        //   return (
+        //     <PrivateRoute
+        //       key={key}
+        //       path={path}
+        //       element={element}
+        //       roles={allowedRoles}
+        //     />
+        //   );
         // }
 
         return <Route key={key} path={path} element={element} />;
@@ -19,9 +26,7 @@ export const ContentRouter = ({ routes }: IContentRouterProp) => {
 
   return (
     <Screen>
-      <BrowserRouter>
-        <Routes>{handleRoutes(routes)}</Routes>
-      </BrowserRouter>
+      <Routes>{handleRoutes(routes)}</Routes>
     </Screen>
   );
 };

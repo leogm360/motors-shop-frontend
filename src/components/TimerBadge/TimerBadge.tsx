@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { differenceInSeconds } from "date-fns";
-import {
-  formatSecondsToTimer,
-  NOW,
-  ONE_SECOND_IN_MILLISECONDS,
-} from "../../utils";
-import { Icon } from "../Icon";
+import { formatSecondsToTimer, NOW, ONE_SECOND_IN_MILLISECONDS } from "@utils";
+import { Icon } from "@components";
 import { ITimerBadgeProps } from "./TimerBadgeTypes";
 
 export const TimerBadge = ({ expiration }: ITimerBadgeProps) => {

@@ -1,11 +1,8 @@
-import { useState } from "react";
 import axios, { AxiosError } from "axios";
-import { TAddress, TAddressResponse } from "./useAddressTypes";
-import { NOT_ALNUM } from "../../utils";
+import { NOT_ALNUM } from "@utils";
+import { TAddressResponse } from "./useAddressTypes";
 
 export const useAddress = () => {
-  const [address, setAddress] = useState<TAddress>({} as TAddress);
-
   const getAddress = async (cep: string) => {
     const sanitizedCep = cep.replace(NOT_ALNUM, "");
 
@@ -17,11 +14,10 @@ export const useAddress = () => {
       throw new AxiosError("CEP não encontrado");
     }
 
-    setAddress(res.data);
+    return res.data;
   };
 
   return {
     getAddress,
-    address,
   };
 };
